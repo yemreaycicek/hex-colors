@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hexColors</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      height: 100vh;
+      cursor: pointer;
+    }
+
+    p {
+      font-family: 'Black Ops One';
+      font-size: 4rem;
+      font-weight: 900;
+      user-select: none;
+    }
+  </style>
+</head>
+<body onclick="hexColors()">
+  <p class="hex">#FFFFFF</p>
+  <script>
+    let hexColors = () => {
+    let hexNumbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+    let hexCode = '';
+
+    for (var i = 0; i < 6; i++) {
+      let randomIndex = Math.floor(Math.random() * hexNumbers.length);
+      hexCode += hexNumbers[randomIndex];
+    };
+
+    document.querySelector('.hex').innerText = `#${hexCode}`;
+    let body = document.getElementsByTagName('body')[0].style.backgroundColor = `#${hexCode}`;
+    };
+  </script>
+</body>
+</html>
